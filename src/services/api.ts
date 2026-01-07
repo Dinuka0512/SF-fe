@@ -2,7 +2,7 @@ import axios, { AxiosError } from "axios";
 import { refreshTokens } from "./User"; // lowercase file name
 
 const api = axios.create({
-  baseURL: "https://smart-farmer-backend-outu.vercel.app/api/v1",
+  baseURL: "https://sf-be.vercel.app/api/v1",
   withCredentials: true, // needed for cookies
 });
 
