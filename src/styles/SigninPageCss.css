@@ -1,0 +1,199 @@
+@import "tailwindcss";
+
+body {
+  overflow-y: hidden;
+}
+
+/* ---------------- DEFAULT: DESKTOP / LAPTOP ---------------- */
+#LogingBody {
+  display: flex;
+  height: 100vh;
+}
+
+#formSection,
+#imageSection {
+  height: 100vh;
+}
+
+#formSection {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+}
+
+#formSection form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 70%;
+  max-width: 400px;
+}
+
+#formSection input,
+#formSection select {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+#formSection button {
+  background-color: #006b37;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+#formSection button:hover {
+  background-color: #104710;
+}
+
+#formSection p {
+  text-align: center;
+  margin-top: 10px;
+  color: #2a7b2a;
+  cursor: pointer;
+  transition-duration: 0.15s;
+}
+
+#formSection p:hover {
+  color: #104710;
+}
+
+#imageSection {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background-color: #e9f7ec;
+}
+
+#imageSection img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* -----------------------------------------------------------
+                    ✨ RESPONSIVE BREAKPOINTS
+----------------------------------------------------------- */
+
+/* ----------- 📱 MOBILE: 0–600px (Image on TOP) ------------ */
+@media (max-width: 600px) {
+  #LogingBody {
+    display: block;
+  }
+
+  #imageSection {
+    height: 100%;
+  }
+
+  #formSection {
+    width: 100%;
+    height: auto;
+    padding: 25px 0;
+  }
+
+  #formSection form {
+    width: 85%;
+    max-width: 340px;
+  }
+}
+
+/* ----------- 🔳 TABLET: 600–1024px (Image on TOP) ------------ */
+@media (min-width: 600px) and (max-width: 1024px) {
+  #LogingBody {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #imageSection {
+    height: 100%
+  }
+
+  #formSection {
+    height: 60vh;
+    width: 100%;
+    padding-top: 30px;
+  }
+
+  #formSection form {
+    width: 65%;
+  }
+}
+
+/* ----------- 💻 LAPTOP: 1024–1440px (Image RIGHT) ------------ */
+@media (min-width: 1024px) and (max-width: 1440px) {
+  #LogingBody {
+    display: flex;
+    flex-direction: row;   /* ensures image stays on right */
+  }
+
+  #formSection {
+    width: 40%;
+  }
+
+  #imageSection {
+    width: 60%;
+    height: 100%;
+  }
+}
+
+/* ----------- 🖥 LARGE DESKTOP: 1440px+ (Image RIGHT) ------------ */
+@media (min-width: 1440px) {
+  #LogingBody {
+    display: flex;
+  }
+
+  #formSection {
+    width: 30%;
+  }
+
+  #imageSection {
+    width: 70%;
+    height: 100%;
+  }
+}
+
+
+#imageSection {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background-color: #e9f7ec;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  /* ADD THIS */
+  animation: imageAnimate 15s infinite ease-in-out;
+}
+
+@keyframes imageAnimate {
+  0% {
+    background-image: url("../assets/I1.jpg");
+  }
+  33% {
+    background-image: url("../assets/I2.jpg");
+  }
+  66% {
+    background-image: url("../assets/I3.jpg");
+  }
+  100% {
+    background-image: url("../assets/I1.jpg");
+  }
+}
+
+.pTagClass p{
+  margin: 0;
+}
