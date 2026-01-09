@@ -31,6 +31,7 @@ export default function ViewAddComponent({ adId }: { adId: string }) {
           `http://localhost:5000/api/v1/ads/getAdAllDetails/${adId}`
         );
         setAd(res.data);
+        console.log("ad : " + data)
       } catch (err) {
         console.error(err);
       } finally {
